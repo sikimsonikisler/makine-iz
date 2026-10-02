@@ -1,0 +1,5205 @@
+{
+ "set": "evaluation",
+ "seeds": {
+  "reference_base": 12000,
+  "run_base": 30000,
+  "reference_seeds": [
+   12000,
+   12001,
+   12002,
+   12010,
+   12011,
+   12012,
+   12020,
+   12021,
+   12022,
+   12030,
+   12031,
+   12032,
+   12040,
+   12041,
+   12042
+  ],
+  "run_seeds": [
+   30000,
+   30164
+  ]
+ },
+ "replicates": 5,
+ "floors": {
+  "vibration_rms_g": 0.01,
+  "temperature_c": 1.0,
+  "power_kw": 0.3,
+  "rpm": 5.0
+ },
+ "analysis_config": {
+  "z_candidate": 3.0,
+  "z_strong": 6.0,
+  "z_normal": 2.0,
+  "window_count": 5,
+  "min_hits": 3,
+  "normal_streak": 8,
+  "freeze_count": 12,
+  "gap_factor": 3.0,
+  "min_baseline_samples": 120,
+  "mad_scale": 1.4826,
+  "dq_recovery": 24
+ },
+ "onset_s": 600.0,
+ "detection_window_s": 1800,
+ "runtime_s": 15.0,
+ "summary": {
+  "normal": {
+   "runs": 30,
+   "hours": 120.0,
+   "deviation_alerts": 9,
+   "alerts_per_hour": 0.075,
+   "evaluated_windows": 86310,
+   "share_z_ge_3": 0.0021202641640597846,
+   "z_p50": 0.75,
+   "z_p99": 2.4683,
+   "z_p999": 3.2146,
+   "by_profile": {
+    "motor": 1,
+    "pump": 8,
+    "fan": 0
+   }
+  },
+  "load_change": {
+   "runs": 15,
+   "transitions": 180,
+   "deviation_alerts": 1,
+   "hours": 30.0
+  },
+  "detection": {
+   "vibration_ramp": {
+    "runs": 15,
+    "detected": 15,
+    "missed": 0,
+    "false_before_onset": 1,
+    "delay_s_median": 115.0,
+    "delay_s_min": 35.0,
+    "delay_s_max": 145.0
+   },
+   "temperature_ramp": {
+    "runs": 15,
+    "detected": 15,
+    "missed": 0,
+    "false_before_onset": 0,
+    "delay_s_median": 220.0,
+    "delay_s_min": 170.0,
+    "delay_s_max": 265.0
+   },
+   "power_vibration": {
+    "runs": 15,
+    "detected": 15,
+    "missed": 0,
+    "false_before_onset": 0,
+    "delay_s_median": 85.0,
+    "delay_s_min": 50.0,
+    "delay_s_max": 160.0
+   },
+   "recovery": {
+    "runs": 15,
+    "detected": 15,
+    "missed": 0,
+    "false_before_onset": 0,
+    "delay_s_median": 30.0,
+    "delay_s_min": 20.0,
+    "delay_s_max": 40.0,
+    "normalized": 15,
+    "normalize_delay_s_median": 35.0
+   }
+  },
+  "missed_scenarios": 0,
+  "missed_cases": [],
+  "spike": {
+   "runs": 15,
+   "deviation_alerts_near_spike": 0
+  },
+  "data_issues": {
+   "missing_values": {
+    "runs": 15,
+    "dq_detected": 15,
+    "expected_dq_type": "invalid",
+    "deviation_during_issue": 0,
+    "deviation_elsewhere": 0
+   },
+   "dropout": {
+    "runs": 15,
+    "dq_detected": 15,
+    "expected_dq_type": "data_gap",
+    "deviation_during_issue": 0,
+    "deviation_elsewhere": 0
+   },
+   "freeze": {
+    "runs": 15,
+    "dq_detected": 15,
+    "expected_dq_type": "frozen",
+    "deviation_during_issue": 0,
+    "deviation_elsewhere": 0
+   }
+  },
+  "records": {
+   "scenario_records": 172440,
+   "reference_records": 198000
+  }
+ },
+ "cases": [
+  {
+   "case": "motor-normal-idle-0",
+   "profile": "motor",
+   "scenario": "normal",
+   "start_mode": "idle",
+   "reference_seed": 12000,
+   "run_seed": 30000,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2880,
+   "candidate_windows": 0,
+   "transition_records": 0
+  },
+  {
+   "case": "motor-normal-loaded-0",
+   "profile": "motor",
+   "scenario": "normal",
+   "start_mode": "loaded",
+   "reference_seed": 12000,
+   "run_seed": 30001,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767608740.0,
+     "started": 1767608730.0,
+     "level": "review",
+     "status": "normalized",
+     "ended": 1767608885.0,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2874,
+   "candidate_windows": 15,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-load-change-idle-0",
+   "profile": "motor",
+   "scenario": "load_change",
+   "start_mode": "idle",
+   "reference_seed": 12000,
+   "run_seed": 30002,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 7200,
+   "records": 1440,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 1373,
+   "candidate_windows": 2,
+   "transition_records": 67
+  },
+  {
+   "case": "motor-vibration-ramp-loaded-0",
+   "profile": "motor",
+   "scenario": "vibration_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12000,
+   "run_seed": 30003,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599555.0,
+     "started": 1767599545.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "power_kw"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 582,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-temperature-ramp-loaded-0",
+   "profile": "motor",
+   "scenario": "temperature_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12000,
+   "run_seed": 30004,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599690.0,
+     "started": 1767599680.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "temperature_c",
+      "vibration_rms_g"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 557,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-power-vibration-loaded-0",
+   "profile": "motor",
+   "scenario": "power_vibration",
+   "start_mode": "loaded",
+   "reference_seed": 12000,
+   "run_seed": 30005,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599510.0,
+     "started": 1767599500.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "power_kw",
+      "vibration_rms_g"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 594,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-recovery-loaded-0",
+   "profile": "motor",
+   "scenario": "recovery",
+   "start_mode": "loaded",
+   "reference_seed": 12000,
+   "run_seed": 30006,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599485.0,
+     "started": 1767599475.0,
+     "level": "strong",
+     "status": "normalized",
+     "ended": 1767599975.0,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 95,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-spike-loaded-0",
+   "profile": "motor",
+   "scenario": "spike",
+   "start_mode": "loaded",
+   "reference_seed": 12000,
+   "run_seed": 30007,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 354,
+   "candidate_windows": 2,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-missing-values-loaded-0",
+   "profile": "motor",
+   "scenario": "missing_values",
+   "start_mode": "loaded",
+   "reference_seed": 12000,
+   "run_seed": 30008,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "invalid",
+     "started": 1767599535.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 342,
+   "candidate_windows": 1,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-dropout-loaded-0",
+   "profile": "motor",
+   "scenario": "dropout",
+   "start_mode": "loaded",
+   "reference_seed": 12000,
+   "run_seed": 30009,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 336,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "data_gap",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 330,
+   "candidate_windows": 2,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-freeze-loaded-0",
+   "profile": "motor",
+   "scenario": "freeze",
+   "start_mode": "loaded",
+   "reference_seed": 12000,
+   "run_seed": 30010,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "frozen",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 328,
+   "candidate_windows": 4,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-normal-idle-0",
+   "profile": "pump",
+   "scenario": "normal",
+   "start_mode": "idle",
+   "reference_seed": 12001,
+   "run_seed": 30011,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2880,
+   "candidate_windows": 0,
+   "transition_records": 0
+  },
+  {
+   "case": "pump-normal-loaded-0",
+   "profile": "pump",
+   "scenario": "normal",
+   "start_mode": "loaded",
+   "reference_seed": 12001,
+   "run_seed": 30012,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2874,
+   "candidate_windows": 6,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-load-change-idle-0",
+   "profile": "pump",
+   "scenario": "load_change",
+   "start_mode": "idle",
+   "reference_seed": 12001,
+   "run_seed": 30013,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 7200,
+   "records": 1440,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 1373,
+   "candidate_windows": 3,
+   "transition_records": 67
+  },
+  {
+   "case": "pump-vibration-ramp-loaded-0",
+   "profile": "pump",
+   "scenario": "vibration_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12001,
+   "run_seed": 30014,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599605.0,
+     "started": 1767599585.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "power_kw"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 576,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-temperature-ramp-loaded-0",
+   "profile": "pump",
+   "scenario": "temperature_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12001,
+   "run_seed": 30015,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599720.0,
+     "started": 1767599700.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "temperature_c",
+      "vibration_rms_g"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 551,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-power-vibration-loaded-0",
+   "profile": "pump",
+   "scenario": "power_vibration",
+   "start_mode": "loaded",
+   "reference_seed": 12001,
+   "run_seed": 30016,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599540.0,
+     "started": 1767599525.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "power_kw",
+      "vibration_rms_g"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 587,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-recovery-loaded-0",
+   "profile": "pump",
+   "scenario": "recovery",
+   "start_mode": "loaded",
+   "reference_seed": 12001,
+   "run_seed": 30017,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599485.0,
+     "started": 1767599475.0,
+     "level": "strong",
+     "status": "normalized",
+     "ended": 1767599995.0,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 100,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-spike-loaded-0",
+   "profile": "pump",
+   "scenario": "spike",
+   "start_mode": "loaded",
+   "reference_seed": 12001,
+   "run_seed": 30018,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 354,
+   "candidate_windows": 5,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-missing-values-loaded-0",
+   "profile": "pump",
+   "scenario": "missing_values",
+   "start_mode": "loaded",
+   "reference_seed": 12001,
+   "run_seed": 30019,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "invalid",
+     "started": 1767599495.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 343,
+   "candidate_windows": 2,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-dropout-loaded-0",
+   "profile": "pump",
+   "scenario": "dropout",
+   "start_mode": "loaded",
+   "reference_seed": 12001,
+   "run_seed": 30020,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 336,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "data_gap",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 330,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-freeze-loaded-0",
+   "profile": "pump",
+   "scenario": "freeze",
+   "start_mode": "loaded",
+   "reference_seed": 12001,
+   "run_seed": 30021,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "frozen",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 328,
+   "candidate_windows": 2,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-normal-idle-0",
+   "profile": "fan",
+   "scenario": "normal",
+   "start_mode": "idle",
+   "reference_seed": 12002,
+   "run_seed": 30022,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2880,
+   "candidate_windows": 0,
+   "transition_records": 0
+  },
+  {
+   "case": "fan-normal-loaded-0",
+   "profile": "fan",
+   "scenario": "normal",
+   "start_mode": "loaded",
+   "reference_seed": 12002,
+   "run_seed": 30023,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2874,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-load-change-idle-0",
+   "profile": "fan",
+   "scenario": "load_change",
+   "start_mode": "idle",
+   "reference_seed": 12002,
+   "run_seed": 30024,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 7200,
+   "records": 1440,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 1373,
+   "candidate_windows": 0,
+   "transition_records": 67
+  },
+  {
+   "case": "fan-vibration-ramp-loaded-0",
+   "profile": "fan",
+   "scenario": "vibration_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12002,
+   "run_seed": 30025,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599600.0,
+     "started": 1767599590.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "rpm"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 575,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-temperature-ramp-loaded-0",
+   "profile": "fan",
+   "scenario": "temperature_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12002,
+   "run_seed": 30026,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599665.0,
+     "started": 1767599650.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "temperature_c",
+      "rpm"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 562,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-power-vibration-loaded-0",
+   "profile": "fan",
+   "scenario": "power_vibration",
+   "start_mode": "loaded",
+   "reference_seed": 12002,
+   "run_seed": 30027,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599600.0,
+     "started": 1767599590.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "power_kw"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 574,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-recovery-loaded-0",
+   "profile": "fan",
+   "scenario": "recovery",
+   "start_mode": "loaded",
+   "reference_seed": 12002,
+   "run_seed": 30028,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599490.0,
+     "started": 1767599480.0,
+     "level": "strong",
+     "status": "normalized",
+     "ended": 1767599975.0,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 92,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-spike-loaded-0",
+   "profile": "fan",
+   "scenario": "spike",
+   "start_mode": "loaded",
+   "reference_seed": 12002,
+   "run_seed": 30029,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 354,
+   "candidate_windows": 1,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-missing-values-loaded-0",
+   "profile": "fan",
+   "scenario": "missing_values",
+   "start_mode": "loaded",
+   "reference_seed": 12002,
+   "run_seed": 30030,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "invalid",
+     "started": 1767599460.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 342,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-dropout-loaded-0",
+   "profile": "fan",
+   "scenario": "dropout",
+   "start_mode": "loaded",
+   "reference_seed": 12002,
+   "run_seed": 30031,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 336,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "data_gap",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 330,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-freeze-loaded-0",
+   "profile": "fan",
+   "scenario": "freeze",
+   "start_mode": "loaded",
+   "reference_seed": 12002,
+   "run_seed": 30032,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "frozen",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 328,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-normal-idle-1",
+   "profile": "motor",
+   "scenario": "normal",
+   "start_mode": "idle",
+   "reference_seed": 12010,
+   "run_seed": 30033,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2880,
+   "candidate_windows": 0,
+   "transition_records": 0
+  },
+  {
+   "case": "motor-normal-loaded-1",
+   "profile": "motor",
+   "scenario": "normal",
+   "start_mode": "loaded",
+   "reference_seed": 12010,
+   "run_seed": 30034,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2874,
+   "candidate_windows": 7,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-load-change-idle-1",
+   "profile": "motor",
+   "scenario": "load_change",
+   "start_mode": "idle",
+   "reference_seed": 12010,
+   "run_seed": 30035,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 7200,
+   "records": 1440,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 1373,
+   "candidate_windows": 2,
+   "transition_records": 67
+  },
+  {
+   "case": "motor-vibration-ramp-loaded-1",
+   "profile": "motor",
+   "scenario": "vibration_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12010,
+   "run_seed": 30036,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599590.0,
+     "started": 1767599580.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "power_kw"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 577,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-temperature-ramp-loaded-1",
+   "profile": "motor",
+   "scenario": "temperature_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12010,
+   "run_seed": 30037,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599660.0,
+     "started": 1767599640.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "temperature_c",
+      "vibration_rms_g"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 563,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-power-vibration-loaded-1",
+   "profile": "motor",
+   "scenario": "power_vibration",
+   "start_mode": "loaded",
+   "reference_seed": 12010,
+   "run_seed": 30038,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599545.0,
+     "started": 1767599525.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "power_kw"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 587,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-recovery-loaded-1",
+   "profile": "motor",
+   "scenario": "recovery",
+   "start_mode": "loaded",
+   "reference_seed": 12010,
+   "run_seed": 30039,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599490.0,
+     "started": 1767599480.0,
+     "level": "strong",
+     "status": "normalized",
+     "ended": 1767599975.0,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 94,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-spike-loaded-1",
+   "profile": "motor",
+   "scenario": "spike",
+   "start_mode": "loaded",
+   "reference_seed": 12010,
+   "run_seed": 30040,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 354,
+   "candidate_windows": 1,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-missing-values-loaded-1",
+   "profile": "motor",
+   "scenario": "missing_values",
+   "start_mode": "loaded",
+   "reference_seed": 12010,
+   "run_seed": 30041,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "invalid",
+     "started": 1767599490.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 340,
+   "candidate_windows": 1,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-dropout-loaded-1",
+   "profile": "motor",
+   "scenario": "dropout",
+   "start_mode": "loaded",
+   "reference_seed": 12010,
+   "run_seed": 30042,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 336,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "data_gap",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 330,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-freeze-loaded-1",
+   "profile": "motor",
+   "scenario": "freeze",
+   "start_mode": "loaded",
+   "reference_seed": 12010,
+   "run_seed": 30043,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "frozen",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 328,
+   "candidate_windows": 1,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-normal-idle-1",
+   "profile": "pump",
+   "scenario": "normal",
+   "start_mode": "idle",
+   "reference_seed": 12011,
+   "run_seed": 30044,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2880,
+   "candidate_windows": 5,
+   "transition_records": 0
+  },
+  {
+   "case": "pump-normal-loaded-1",
+   "profile": "pump",
+   "scenario": "normal",
+   "start_mode": "loaded",
+   "reference_seed": 12011,
+   "run_seed": 30045,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2874,
+   "candidate_windows": 15,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-load-change-idle-1",
+   "profile": "pump",
+   "scenario": "load_change",
+   "start_mode": "idle",
+   "reference_seed": 12011,
+   "run_seed": 30046,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 7200,
+   "records": 1440,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 1373,
+   "candidate_windows": 4,
+   "transition_records": 67
+  },
+  {
+   "case": "pump-vibration-ramp-loaded-1",
+   "profile": "pump",
+   "scenario": "vibration_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12011,
+   "run_seed": 30047,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599495.0,
+     "started": 1767599485.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 585,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-temperature-ramp-loaded-1",
+   "profile": "pump",
+   "scenario": "temperature_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12011,
+   "run_seed": 30048,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599645.0,
+     "started": 1767599635.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "power_kw",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 557,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-power-vibration-loaded-1",
+   "profile": "pump",
+   "scenario": "power_vibration",
+   "start_mode": "loaded",
+   "reference_seed": 12011,
+   "run_seed": 30049,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599555.0,
+     "started": 1767599540.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "power_kw"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 586,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-recovery-loaded-1",
+   "profile": "pump",
+   "scenario": "recovery",
+   "start_mode": "loaded",
+   "reference_seed": 12011,
+   "run_seed": 30050,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599495.0,
+     "started": 1767599485.0,
+     "level": "strong",
+     "status": "normalized",
+     "ended": 1767600000.0,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 92,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-spike-loaded-1",
+   "profile": "pump",
+   "scenario": "spike",
+   "start_mode": "loaded",
+   "reference_seed": 12011,
+   "run_seed": 30051,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 354,
+   "candidate_windows": 2,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-missing-values-loaded-1",
+   "profile": "pump",
+   "scenario": "missing_values",
+   "start_mode": "loaded",
+   "reference_seed": 12011,
+   "run_seed": 30052,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "invalid",
+     "started": 1767599480.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 346,
+   "candidate_windows": 1,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-dropout-loaded-1",
+   "profile": "pump",
+   "scenario": "dropout",
+   "start_mode": "loaded",
+   "reference_seed": 12011,
+   "run_seed": 30053,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 336,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "data_gap",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 330,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-freeze-loaded-1",
+   "profile": "pump",
+   "scenario": "freeze",
+   "start_mode": "loaded",
+   "reference_seed": 12011,
+   "run_seed": 30054,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "frozen",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 328,
+   "candidate_windows": 2,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-normal-idle-1",
+   "profile": "fan",
+   "scenario": "normal",
+   "start_mode": "idle",
+   "reference_seed": 12012,
+   "run_seed": 30055,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2880,
+   "candidate_windows": 0,
+   "transition_records": 0
+  },
+  {
+   "case": "fan-normal-loaded-1",
+   "profile": "fan",
+   "scenario": "normal",
+   "start_mode": "loaded",
+   "reference_seed": 12012,
+   "run_seed": 30056,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2874,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-load-change-idle-1",
+   "profile": "fan",
+   "scenario": "load_change",
+   "start_mode": "idle",
+   "reference_seed": 12012,
+   "run_seed": 30057,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 7200,
+   "records": 1440,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 1373,
+   "candidate_windows": 0,
+   "transition_records": 67
+  },
+  {
+   "case": "fan-vibration-ramp-loaded-1",
+   "profile": "fan",
+   "scenario": "vibration_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12012,
+   "run_seed": 30058,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599580.0,
+     "started": 1767599570.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 578,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-temperature-ramp-loaded-1",
+   "profile": "fan",
+   "scenario": "temperature_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12012,
+   "run_seed": 30059,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599725.0,
+     "started": 1767599705.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "temperature_c",
+      "vibration_rms_g"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 548,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-power-vibration-loaded-1",
+   "profile": "fan",
+   "scenario": "power_vibration",
+   "start_mode": "loaded",
+   "reference_seed": 12012,
+   "run_seed": 30060,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599615.0,
+     "started": 1767599595.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "power_kw"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 572,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-recovery-loaded-1",
+   "profile": "fan",
+   "scenario": "recovery",
+   "start_mode": "loaded",
+   "reference_seed": 12012,
+   "run_seed": 30061,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599500.0,
+     "started": 1767599485.0,
+     "level": "strong",
+     "status": "normalized",
+     "ended": 1767599975.0,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 90,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-spike-loaded-1",
+   "profile": "fan",
+   "scenario": "spike",
+   "start_mode": "loaded",
+   "reference_seed": 12012,
+   "run_seed": 30062,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 354,
+   "candidate_windows": 1,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-missing-values-loaded-1",
+   "profile": "fan",
+   "scenario": "missing_values",
+   "start_mode": "loaded",
+   "reference_seed": 12012,
+   "run_seed": 30063,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "invalid",
+     "started": 1767599515.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 340,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-dropout-loaded-1",
+   "profile": "fan",
+   "scenario": "dropout",
+   "start_mode": "loaded",
+   "reference_seed": 12012,
+   "run_seed": 30064,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 336,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "data_gap",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 330,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-freeze-loaded-1",
+   "profile": "fan",
+   "scenario": "freeze",
+   "start_mode": "loaded",
+   "reference_seed": 12012,
+   "run_seed": 30065,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "frozen",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 328,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-normal-idle-2",
+   "profile": "motor",
+   "scenario": "normal",
+   "start_mode": "idle",
+   "reference_seed": 12020,
+   "run_seed": 30066,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2880,
+   "candidate_windows": 0,
+   "transition_records": 0
+  },
+  {
+   "case": "motor-normal-loaded-2",
+   "profile": "motor",
+   "scenario": "normal",
+   "start_mode": "loaded",
+   "reference_seed": 12020,
+   "run_seed": 30067,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2874,
+   "candidate_windows": 18,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-load-change-idle-2",
+   "profile": "motor",
+   "scenario": "load_change",
+   "start_mode": "idle",
+   "reference_seed": 12020,
+   "run_seed": 30068,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 7200,
+   "records": 1440,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 1373,
+   "candidate_windows": 10,
+   "transition_records": 67
+  },
+  {
+   "case": "motor-vibration-ramp-loaded-2",
+   "profile": "motor",
+   "scenario": "vibration_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12020,
+   "run_seed": 30069,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599530.0,
+     "started": 1767599520.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 581,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-temperature-ramp-loaded-2",
+   "profile": "motor",
+   "scenario": "temperature_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12020,
+   "run_seed": 30070,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599630.0,
+     "started": 1767599620.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "temperature_c",
+      "power_kw"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 560,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-power-vibration-loaded-2",
+   "profile": "motor",
+   "scenario": "power_vibration",
+   "start_mode": "loaded",
+   "reference_seed": 12020,
+   "run_seed": 30071,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599540.0,
+     "started": 1767599530.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "power_kw",
+      "vibration_rms_g"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 587,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-recovery-loaded-2",
+   "profile": "motor",
+   "scenario": "recovery",
+   "start_mode": "loaded",
+   "reference_seed": 12020,
+   "run_seed": 30072,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599480.0,
+     "started": 1767599470.0,
+     "level": "strong",
+     "status": "normalized",
+     "ended": 1767600065.0,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 100,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-spike-loaded-2",
+   "profile": "motor",
+   "scenario": "spike",
+   "start_mode": "loaded",
+   "reference_seed": 12020,
+   "run_seed": 30073,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 354,
+   "candidate_windows": 3,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-missing-values-loaded-2",
+   "profile": "motor",
+   "scenario": "missing_values",
+   "start_mode": "loaded",
+   "reference_seed": 12020,
+   "run_seed": 30074,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "invalid",
+     "started": 1767599460.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 339,
+   "candidate_windows": 3,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-dropout-loaded-2",
+   "profile": "motor",
+   "scenario": "dropout",
+   "start_mode": "loaded",
+   "reference_seed": 12020,
+   "run_seed": 30075,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 336,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "data_gap",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 330,
+   "candidate_windows": 5,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-freeze-loaded-2",
+   "profile": "motor",
+   "scenario": "freeze",
+   "start_mode": "loaded",
+   "reference_seed": 12020,
+   "run_seed": 30076,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "frozen",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 328,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-normal-idle-2",
+   "profile": "pump",
+   "scenario": "normal",
+   "start_mode": "idle",
+   "reference_seed": 12021,
+   "run_seed": 30077,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2880,
+   "candidate_windows": 5,
+   "transition_records": 0
+  },
+  {
+   "case": "pump-normal-loaded-2",
+   "profile": "pump",
+   "scenario": "normal",
+   "start_mode": "loaded",
+   "reference_seed": 12021,
+   "run_seed": 30078,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767601820.0,
+     "started": 1767601810.0,
+     "level": "review",
+     "status": "normalized",
+     "ended": 1767601870.0,
+     "top": [
+      "power_kw",
+      "rpm"
+     ]
+    },
+    {
+     "raised": 1767610265.0,
+     "started": 1767610255.0,
+     "level": "review",
+     "status": "normalized",
+     "ended": 1767610330.0,
+     "top": [
+      "power_kw",
+      "temperature_c"
+     ]
+    },
+    {
+     "raised": 1767611525.0,
+     "started": 1767611515.0,
+     "level": "review",
+     "status": "normalized",
+     "ended": 1767611570.0,
+     "top": [
+      "vibration_rms_g",
+      "power_kw"
+     ]
+    },
+    {
+     "raised": 1767611625.0,
+     "started": 1767611615.0,
+     "level": "review",
+     "status": "normalized",
+     "ended": 1767611705.0,
+     "top": [
+      "power_kw",
+      "vibration_rms_g"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2874,
+   "candidate_windows": 38,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-load-change-idle-2",
+   "profile": "pump",
+   "scenario": "load_change",
+   "start_mode": "idle",
+   "reference_seed": 12021,
+   "run_seed": 30079,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 7200,
+   "records": 1440,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 1373,
+   "candidate_windows": 7,
+   "transition_records": 67
+  },
+  {
+   "case": "pump-vibration-ramp-loaded-2",
+   "profile": "pump",
+   "scenario": "vibration_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12021,
+   "run_seed": 30080,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599595.0,
+     "started": 1767599575.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "power_kw"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 579,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-temperature-ramp-loaded-2",
+   "profile": "pump",
+   "scenario": "temperature_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12021,
+   "run_seed": 30081,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599665.0,
+     "started": 1767599655.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "temperature_c",
+      "vibration_rms_g"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 558,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-power-vibration-loaded-2",
+   "profile": "pump",
+   "scenario": "power_vibration",
+   "start_mode": "loaded",
+   "reference_seed": 12021,
+   "run_seed": 30082,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599525.0,
+     "started": 1767599515.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "power_kw",
+      "vibration_rms_g"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 589,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-recovery-loaded-2",
+   "profile": "pump",
+   "scenario": "recovery",
+   "start_mode": "loaded",
+   "reference_seed": 12021,
+   "run_seed": 30083,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599500.0,
+     "started": 1767599490.0,
+     "level": "strong",
+     "status": "normalized",
+     "ended": 1767599975.0,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 92,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-spike-loaded-2",
+   "profile": "pump",
+   "scenario": "spike",
+   "start_mode": "loaded",
+   "reference_seed": 12021,
+   "run_seed": 30084,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 354,
+   "candidate_windows": 2,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-missing-values-loaded-2",
+   "profile": "pump",
+   "scenario": "missing_values",
+   "start_mode": "loaded",
+   "reference_seed": 12021,
+   "run_seed": 30085,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "invalid",
+     "started": 1767599465.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 336,
+   "candidate_windows": 2,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-dropout-loaded-2",
+   "profile": "pump",
+   "scenario": "dropout",
+   "start_mode": "loaded",
+   "reference_seed": 12021,
+   "run_seed": 30086,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 336,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "data_gap",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 330,
+   "candidate_windows": 1,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-freeze-loaded-2",
+   "profile": "pump",
+   "scenario": "freeze",
+   "start_mode": "loaded",
+   "reference_seed": 12021,
+   "run_seed": 30087,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "frozen",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 328,
+   "candidate_windows": 4,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-normal-idle-2",
+   "profile": "fan",
+   "scenario": "normal",
+   "start_mode": "idle",
+   "reference_seed": 12022,
+   "run_seed": 30088,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2880,
+   "candidate_windows": 0,
+   "transition_records": 0
+  },
+  {
+   "case": "fan-normal-loaded-2",
+   "profile": "fan",
+   "scenario": "normal",
+   "start_mode": "loaded",
+   "reference_seed": 12022,
+   "run_seed": 30089,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2874,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-load-change-idle-2",
+   "profile": "fan",
+   "scenario": "load_change",
+   "start_mode": "idle",
+   "reference_seed": 12022,
+   "run_seed": 30090,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 7200,
+   "records": 1440,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 1373,
+   "candidate_windows": 0,
+   "transition_records": 67
+  },
+  {
+   "case": "fan-vibration-ramp-loaded-2",
+   "profile": "fan",
+   "scenario": "vibration_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12022,
+   "run_seed": 30091,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599555.0,
+     "started": 1767599535.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "rpm"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 578,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-temperature-ramp-loaded-2",
+   "profile": "fan",
+   "scenario": "temperature_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12022,
+   "run_seed": 30092,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599680.0,
+     "started": 1767599670.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "temperature_c",
+      "vibration_rms_g"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 558,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-power-vibration-loaded-2",
+   "profile": "fan",
+   "scenario": "power_vibration",
+   "start_mode": "loaded",
+   "reference_seed": 12022,
+   "run_seed": 30093,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599570.0,
+     "started": 1767599560.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "rpm"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 575,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-recovery-loaded-2",
+   "profile": "fan",
+   "scenario": "recovery",
+   "start_mode": "loaded",
+   "reference_seed": 12022,
+   "run_seed": 30094,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599490.0,
+     "started": 1767599480.0,
+     "level": "strong",
+     "status": "normalized",
+     "ended": 1767599975.0,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 92,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-spike-loaded-2",
+   "profile": "fan",
+   "scenario": "spike",
+   "start_mode": "loaded",
+   "reference_seed": 12022,
+   "run_seed": 30095,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 354,
+   "candidate_windows": 1,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-missing-values-loaded-2",
+   "profile": "fan",
+   "scenario": "missing_values",
+   "start_mode": "loaded",
+   "reference_seed": 12022,
+   "run_seed": 30096,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "invalid",
+     "started": 1767599510.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 341,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-dropout-loaded-2",
+   "profile": "fan",
+   "scenario": "dropout",
+   "start_mode": "loaded",
+   "reference_seed": 12022,
+   "run_seed": 30097,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 336,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "data_gap",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 330,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-freeze-loaded-2",
+   "profile": "fan",
+   "scenario": "freeze",
+   "start_mode": "loaded",
+   "reference_seed": 12022,
+   "run_seed": 30098,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "frozen",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 328,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-normal-idle-3",
+   "profile": "motor",
+   "scenario": "normal",
+   "start_mode": "idle",
+   "reference_seed": 12030,
+   "run_seed": 30099,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2880,
+   "candidate_windows": 0,
+   "transition_records": 0
+  },
+  {
+   "case": "motor-normal-loaded-3",
+   "profile": "motor",
+   "scenario": "normal",
+   "start_mode": "loaded",
+   "reference_seed": 12030,
+   "run_seed": 30100,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2874,
+   "candidate_windows": 9,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-load-change-idle-3",
+   "profile": "motor",
+   "scenario": "load_change",
+   "start_mode": "idle",
+   "reference_seed": 12030,
+   "run_seed": 30101,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 7200,
+   "records": 1440,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 1373,
+   "candidate_windows": 0,
+   "transition_records": 67
+  },
+  {
+   "case": "motor-vibration-ramp-loaded-3",
+   "profile": "motor",
+   "scenario": "vibration_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12030,
+   "run_seed": 30102,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599555.0,
+     "started": 1767599540.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 584,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-temperature-ramp-loaded-3",
+   "profile": "motor",
+   "scenario": "temperature_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12030,
+   "run_seed": 30103,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599695.0,
+     "started": 1767599685.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "temperature_c",
+      "power_kw"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 556,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-power-vibration-loaded-3",
+   "profile": "motor",
+   "scenario": "power_vibration",
+   "start_mode": "loaded",
+   "reference_seed": 12030,
+   "run_seed": 30104,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599540.0,
+     "started": 1767599525.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "power_kw",
+      "vibration_rms_g"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 587,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-recovery-loaded-3",
+   "profile": "motor",
+   "scenario": "recovery",
+   "start_mode": "loaded",
+   "reference_seed": 12030,
+   "run_seed": 30105,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599490.0,
+     "started": 1767599480.0,
+     "level": "strong",
+     "status": "normalized",
+     "ended": 1767599995.0,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 96,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-spike-loaded-3",
+   "profile": "motor",
+   "scenario": "spike",
+   "start_mode": "loaded",
+   "reference_seed": 12030,
+   "run_seed": 30106,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767600510.0,
+     "started": 1767600500.0,
+     "level": "review",
+     "status": "normalized",
+     "ended": 1767600605.0,
+     "top": [
+      "vibration_rms_g",
+      "power_kw"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 354,
+   "candidate_windows": 6,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-missing-values-loaded-3",
+   "profile": "motor",
+   "scenario": "missing_values",
+   "start_mode": "loaded",
+   "reference_seed": 12030,
+   "run_seed": 30107,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "invalid",
+     "started": 1767599520.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 340,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-dropout-loaded-3",
+   "profile": "motor",
+   "scenario": "dropout",
+   "start_mode": "loaded",
+   "reference_seed": 12030,
+   "run_seed": 30108,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 336,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "data_gap",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 330,
+   "candidate_windows": 1,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-freeze-loaded-3",
+   "profile": "motor",
+   "scenario": "freeze",
+   "start_mode": "loaded",
+   "reference_seed": 12030,
+   "run_seed": 30109,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "frozen",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 328,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-normal-idle-3",
+   "profile": "pump",
+   "scenario": "normal",
+   "start_mode": "idle",
+   "reference_seed": 12031,
+   "run_seed": 30110,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2880,
+   "candidate_windows": 3,
+   "transition_records": 0
+  },
+  {
+   "case": "pump-normal-loaded-3",
+   "profile": "pump",
+   "scenario": "normal",
+   "start_mode": "loaded",
+   "reference_seed": 12031,
+   "run_seed": 30111,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599685.0,
+     "started": 1767599675.0,
+     "level": "review",
+     "status": "normalized",
+     "ended": 1767599805.0,
+     "top": [
+      "power_kw",
+      "rpm"
+     ]
+    },
+    {
+     "raised": 1767607440.0,
+     "started": 1767607425.0,
+     "level": "review",
+     "status": "normalized",
+     "ended": 1767607540.0,
+     "top": [
+      "power_kw",
+      "rpm"
+     ]
+    },
+    {
+     "raised": 1767610220.0,
+     "started": 1767610200.0,
+     "level": "review",
+     "status": "normalized",
+     "ended": 1767610300.0,
+     "top": [
+      "power_kw",
+      "vibration_rms_g"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2874,
+   "candidate_windows": 24,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-load-change-idle-3",
+   "profile": "pump",
+   "scenario": "load_change",
+   "start_mode": "idle",
+   "reference_seed": 12031,
+   "run_seed": 30112,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 7200,
+   "records": 1440,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767604350.0,
+     "started": 1767604340.0,
+     "level": "review",
+     "status": "normalized",
+     "ended": 1767604470.0,
+     "top": [
+      "power_kw",
+      "rpm"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 1373,
+   "candidate_windows": 10,
+   "transition_records": 67
+  },
+  {
+   "case": "pump-vibration-ramp-loaded-3",
+   "profile": "pump",
+   "scenario": "vibration_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12031,
+   "run_seed": 30113,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599550.0,
+     "started": 1767599540.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "rpm"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 585,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-temperature-ramp-loaded-3",
+   "profile": "pump",
+   "scenario": "temperature_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12031,
+   "run_seed": 30114,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599635.0,
+     "started": 1767599625.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "temperature_c",
+      "power_kw"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 562,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-power-vibration-loaded-3",
+   "profile": "pump",
+   "scenario": "power_vibration",
+   "start_mode": "loaded",
+   "reference_seed": 12031,
+   "run_seed": 30115,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599545.0,
+     "started": 1767599530.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "power_kw"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 587,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-recovery-loaded-3",
+   "profile": "pump",
+   "scenario": "recovery",
+   "start_mode": "loaded",
+   "reference_seed": 12031,
+   "run_seed": 30116,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599480.0,
+     "started": 1767599470.0,
+     "level": "strong",
+     "status": "normalized",
+     "ended": 1767599990.0,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 94,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-spike-loaded-3",
+   "profile": "pump",
+   "scenario": "spike",
+   "start_mode": "loaded",
+   "reference_seed": 12031,
+   "run_seed": 30117,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767600545.0,
+     "started": 1767600535.0,
+     "level": "review",
+     "status": "normalized",
+     "ended": 1767600590.0,
+     "top": [
+      "power_kw",
+      "vibration_rms_g"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 354,
+   "candidate_windows": 7,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-missing-values-loaded-3",
+   "profile": "pump",
+   "scenario": "missing_values",
+   "start_mode": "loaded",
+   "reference_seed": 12031,
+   "run_seed": 30118,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "invalid",
+     "started": 1767599460.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 343,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-dropout-loaded-3",
+   "profile": "pump",
+   "scenario": "dropout",
+   "start_mode": "loaded",
+   "reference_seed": 12031,
+   "run_seed": 30119,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 336,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "data_gap",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 330,
+   "candidate_windows": 1,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-freeze-loaded-3",
+   "profile": "pump",
+   "scenario": "freeze",
+   "start_mode": "loaded",
+   "reference_seed": 12031,
+   "run_seed": 30120,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "frozen",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 328,
+   "candidate_windows": 1,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-normal-idle-3",
+   "profile": "fan",
+   "scenario": "normal",
+   "start_mode": "idle",
+   "reference_seed": 12032,
+   "run_seed": 30121,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2880,
+   "candidate_windows": 0,
+   "transition_records": 0
+  },
+  {
+   "case": "fan-normal-loaded-3",
+   "profile": "fan",
+   "scenario": "normal",
+   "start_mode": "loaded",
+   "reference_seed": 12032,
+   "run_seed": 30122,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2874,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-load-change-idle-3",
+   "profile": "fan",
+   "scenario": "load_change",
+   "start_mode": "idle",
+   "reference_seed": 12032,
+   "run_seed": 30123,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 7200,
+   "records": 1440,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 1373,
+   "candidate_windows": 0,
+   "transition_records": 67
+  },
+  {
+   "case": "fan-vibration-ramp-loaded-3",
+   "profile": "fan",
+   "scenario": "vibration_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12032,
+   "run_seed": 30124,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599575.0,
+     "started": 1767599565.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 580,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-temperature-ramp-loaded-3",
+   "profile": "fan",
+   "scenario": "temperature_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12032,
+   "run_seed": 30125,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599685.0,
+     "started": 1767599670.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "temperature_c",
+      "rpm"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 556,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-power-vibration-loaded-3",
+   "profile": "fan",
+   "scenario": "power_vibration",
+   "start_mode": "loaded",
+   "reference_seed": 12032,
+   "run_seed": 30126,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599575.0,
+     "started": 1767599565.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "power_kw"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 579,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-recovery-loaded-3",
+   "profile": "fan",
+   "scenario": "recovery",
+   "start_mode": "loaded",
+   "reference_seed": 12032,
+   "run_seed": 30127,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599495.0,
+     "started": 1767599485.0,
+     "level": "strong",
+     "status": "normalized",
+     "ended": 1767599975.0,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 91,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-spike-loaded-3",
+   "profile": "fan",
+   "scenario": "spike",
+   "start_mode": "loaded",
+   "reference_seed": 12032,
+   "run_seed": 30128,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 354,
+   "candidate_windows": 1,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-missing-values-loaded-3",
+   "profile": "fan",
+   "scenario": "missing_values",
+   "start_mode": "loaded",
+   "reference_seed": 12032,
+   "run_seed": 30129,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "invalid",
+     "started": 1767599480.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 344,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-dropout-loaded-3",
+   "profile": "fan",
+   "scenario": "dropout",
+   "start_mode": "loaded",
+   "reference_seed": 12032,
+   "run_seed": 30130,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 336,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "data_gap",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 330,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-freeze-loaded-3",
+   "profile": "fan",
+   "scenario": "freeze",
+   "start_mode": "loaded",
+   "reference_seed": 12032,
+   "run_seed": 30131,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "frozen",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 328,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-normal-idle-4",
+   "profile": "motor",
+   "scenario": "normal",
+   "start_mode": "idle",
+   "reference_seed": 12040,
+   "run_seed": 30132,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2880,
+   "candidate_windows": 0,
+   "transition_records": 0
+  },
+  {
+   "case": "motor-normal-loaded-4",
+   "profile": "motor",
+   "scenario": "normal",
+   "start_mode": "loaded",
+   "reference_seed": 12040,
+   "run_seed": 30133,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2874,
+   "candidate_windows": 8,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-load-change-idle-4",
+   "profile": "motor",
+   "scenario": "load_change",
+   "start_mode": "idle",
+   "reference_seed": 12040,
+   "run_seed": 30134,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 7200,
+   "records": 1440,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 1373,
+   "candidate_windows": 1,
+   "transition_records": 67
+  },
+  {
+   "case": "motor-vibration-ramp-loaded-4",
+   "profile": "motor",
+   "scenario": "vibration_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12040,
+   "run_seed": 30135,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599555.0,
+     "started": 1767599540.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "power_kw"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 583,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-temperature-ramp-loaded-4",
+   "profile": "motor",
+   "scenario": "temperature_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12040,
+   "run_seed": 30136,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599685.0,
+     "started": 1767599675.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "temperature_c",
+      "power_kw"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 556,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-power-vibration-loaded-4",
+   "profile": "motor",
+   "scenario": "power_vibration",
+   "start_mode": "loaded",
+   "reference_seed": 12040,
+   "run_seed": 30137,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599535.0,
+     "started": 1767599525.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "power_kw",
+      "vibration_rms_g"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 588,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-recovery-loaded-4",
+   "profile": "motor",
+   "scenario": "recovery",
+   "start_mode": "loaded",
+   "reference_seed": 12040,
+   "run_seed": 30138,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599485.0,
+     "started": 1767599475.0,
+     "level": "strong",
+     "status": "normalized",
+     "ended": 1767599975.0,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 93,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-spike-loaded-4",
+   "profile": "motor",
+   "scenario": "spike",
+   "start_mode": "loaded",
+   "reference_seed": 12040,
+   "run_seed": 30139,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 354,
+   "candidate_windows": 1,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-missing-values-loaded-4",
+   "profile": "motor",
+   "scenario": "missing_values",
+   "start_mode": "loaded",
+   "reference_seed": 12040,
+   "run_seed": 30140,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "invalid",
+     "started": 1767599500.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 344,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-dropout-loaded-4",
+   "profile": "motor",
+   "scenario": "dropout",
+   "start_mode": "loaded",
+   "reference_seed": 12040,
+   "run_seed": 30141,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 336,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "data_gap",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 330,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "motor-freeze-loaded-4",
+   "profile": "motor",
+   "scenario": "freeze",
+   "start_mode": "loaded",
+   "reference_seed": 12040,
+   "run_seed": 30142,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "frozen",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 328,
+   "candidate_windows": 1,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-normal-idle-4",
+   "profile": "pump",
+   "scenario": "normal",
+   "start_mode": "idle",
+   "reference_seed": 12041,
+   "run_seed": 30143,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2880,
+   "candidate_windows": 7,
+   "transition_records": 0
+  },
+  {
+   "case": "pump-normal-loaded-4",
+   "profile": "pump",
+   "scenario": "normal",
+   "start_mode": "loaded",
+   "reference_seed": 12041,
+   "run_seed": 30144,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599295.0,
+     "started": 1767599280.0,
+     "level": "review",
+     "status": "normalized",
+     "ended": 1767599425.0,
+     "top": [
+      "vibration_rms_g",
+      "power_kw"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2874,
+   "candidate_windows": 23,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-load-change-idle-4",
+   "profile": "pump",
+   "scenario": "load_change",
+   "start_mode": "idle",
+   "reference_seed": 12041,
+   "run_seed": 30145,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 7200,
+   "records": 1440,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 1373,
+   "candidate_windows": 12,
+   "transition_records": 67
+  },
+  {
+   "case": "pump-vibration-ramp-loaded-4",
+   "profile": "pump",
+   "scenario": "vibration_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12041,
+   "run_seed": 30146,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599300.0,
+     "started": 1767599290.0,
+     "level": "review",
+     "status": "normalized",
+     "ended": 1767599350.0,
+     "top": [
+      "power_kw",
+      "vibration_rms_g"
+     ]
+    },
+    {
+     "raised": 1767599585.0,
+     "started": 1767599570.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "power_kw"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 587,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-temperature-ramp-loaded-4",
+   "profile": "pump",
+   "scenario": "temperature_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12041,
+   "run_seed": 30147,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599715.0,
+     "started": 1767599705.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "temperature_c",
+      "vibration_rms_g"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 555,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-power-vibration-loaded-4",
+   "profile": "pump",
+   "scenario": "power_vibration",
+   "start_mode": "loaded",
+   "reference_seed": 12041,
+   "run_seed": 30148,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599550.0,
+     "started": 1767599530.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "power_kw",
+      "vibration_rms_g"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 586,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-recovery-loaded-4",
+   "profile": "pump",
+   "scenario": "recovery",
+   "start_mode": "loaded",
+   "reference_seed": 12041,
+   "run_seed": 30149,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599490.0,
+     "started": 1767599475.0,
+     "level": "strong",
+     "status": "normalized",
+     "ended": 1767599975.0,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 96,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-spike-loaded-4",
+   "profile": "pump",
+   "scenario": "spike",
+   "start_mode": "loaded",
+   "reference_seed": 12041,
+   "run_seed": 30150,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 354,
+   "candidate_windows": 5,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-missing-values-loaded-4",
+   "profile": "pump",
+   "scenario": "missing_values",
+   "start_mode": "loaded",
+   "reference_seed": 12041,
+   "run_seed": 30151,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "invalid",
+     "started": 1767599460.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 343,
+   "candidate_windows": 1,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-dropout-loaded-4",
+   "profile": "pump",
+   "scenario": "dropout",
+   "start_mode": "loaded",
+   "reference_seed": 12041,
+   "run_seed": 30152,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 336,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "data_gap",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 330,
+   "candidate_windows": 4,
+   "transition_records": 6
+  },
+  {
+   "case": "pump-freeze-loaded-4",
+   "profile": "pump",
+   "scenario": "freeze",
+   "start_mode": "loaded",
+   "reference_seed": 12041,
+   "run_seed": 30153,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "frozen",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 328,
+   "candidate_windows": 4,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-normal-idle-4",
+   "profile": "fan",
+   "scenario": "normal",
+   "start_mode": "idle",
+   "reference_seed": 12042,
+   "run_seed": 30154,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2880,
+   "candidate_windows": 0,
+   "transition_records": 0
+  },
+  {
+   "case": "fan-normal-loaded-4",
+   "profile": "fan",
+   "scenario": "normal",
+   "start_mode": "loaded",
+   "reference_seed": 12042,
+   "run_seed": 30155,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 14400,
+   "records": 2880,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 2874,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-load-change-idle-4",
+   "profile": "fan",
+   "scenario": "load_change",
+   "start_mode": "idle",
+   "reference_seed": 12042,
+   "run_seed": 30156,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 7200,
+   "records": 1440,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 1373,
+   "candidate_windows": 0,
+   "transition_records": 67
+  },
+  {
+   "case": "fan-vibration-ramp-loaded-4",
+   "profile": "fan",
+   "scenario": "vibration_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12042,
+   "run_seed": 30157,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599605.0,
+     "started": 1767599595.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "rpm"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 572,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-temperature-ramp-loaded-4",
+   "profile": "fan",
+   "scenario": "temperature_ramp",
+   "start_mode": "loaded",
+   "reference_seed": 12042,
+   "run_seed": 30158,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599675.0,
+     "started": 1767599660.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "temperature_c",
+      "vibration_rms_g"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 560,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-power-vibration-loaded-4",
+   "profile": "fan",
+   "scenario": "power_vibration",
+   "start_mode": "loaded",
+   "reference_seed": 12042,
+   "run_seed": 30159,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599620.0,
+     "started": 1767599610.0,
+     "level": "strong",
+     "status": "active",
+     "ended": null,
+     "top": [
+      "vibration_rms_g",
+      "power_kw"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 574,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-recovery-loaded-4",
+   "profile": "fan",
+   "scenario": "recovery",
+   "start_mode": "loaded",
+   "reference_seed": 12042,
+   "run_seed": 30160,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 3600,
+   "records": 720,
+   "reference_records": 1200,
+   "deviation_alerts": [
+    {
+     "raised": 1767599495.0,
+     "started": 1767599480.0,
+     "level": "strong",
+     "status": "normalized",
+     "ended": 1767599975.0,
+     "top": [
+      "vibration_rms_g",
+      "temperature_c"
+     ]
+    }
+   ],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 714,
+   "candidate_windows": 91,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-spike-loaded-4",
+   "profile": "fan",
+   "scenario": "spike",
+   "start_mode": "loaded",
+   "reference_seed": 12042,
+   "run_seed": 30161,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 354,
+   "candidate_windows": 1,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-missing-values-loaded-4",
+   "profile": "fan",
+   "scenario": "missing_values",
+   "start_mode": "loaded",
+   "reference_seed": 12042,
+   "run_seed": 30162,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "invalid",
+     "started": 1767599460.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 341,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-dropout-loaded-4",
+   "profile": "fan",
+   "scenario": "dropout",
+   "start_mode": "loaded",
+   "reference_seed": 12042,
+   "run_seed": 30163,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 336,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "data_gap",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 330,
+   "candidate_windows": 0,
+   "transition_records": 6
+  },
+  {
+   "case": "fan-freeze-loaded-4",
+   "profile": "fan",
+   "scenario": "freeze",
+   "start_mode": "loaded",
+   "reference_seed": 12042,
+   "run_seed": 30164,
+   "run_start": 1767598860.0,
+   "onset": 1767599460.0,
+   "duration_s": 1800,
+   "records": 360,
+   "reference_records": 1200,
+   "deviation_alerts": [],
+   "dq_alerts": [
+    {
+     "type": "data_gap",
+     "started": 1767598800.0,
+     "status": "normalized"
+    },
+    {
+     "type": "frozen",
+     "started": 1767599455.0,
+     "status": "normalized"
+    }
+   ],
+   "evaluated_windows": 328,
+   "candidate_windows": 0,
+   "transition_records": 6
+  }
+ ]
+}

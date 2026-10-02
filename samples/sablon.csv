@@ -1,0 +1,4 @@
+machine_id,timestamp,operating_mode,vibration_rms_g,temperature_c,power_kw,rpm,source
+makine-1,2026-10-01T08:00:00+03:00,idle,0.08,41.5,1.8,1490,csv
+makine-1,2026-10-01T08:00:05+03:00,idle,0.081,41.6,1.79,1489.5,csv
+makine-1,2026-10-01T08:00:10+03:00,loaded,0.15,41.9,10.9,1456,csv

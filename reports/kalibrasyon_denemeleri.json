@@ -1,0 +1,102 @@
+[
+ {
+  "label": "Başlangıç (çözünürlük temelli)",
+  "floors": {
+   "vibration_rms_g": 0.005,
+   "temperature_c": 0.3,
+   "power_kw": 0.05,
+   "rpm": 3.0
+  },
+  "normal_per_h": 0.475,
+  "normal_alerts": 57,
+  "hours": 120.0,
+  "load": [
+   22,
+   180
+  ],
+  "missed": 2,
+  "spike": 2,
+  "delays": {
+   "vibration_ramp": 90.0,
+   "temperature_ramp": 132.5,
+   "power_vibration": 80.0,
+   "recovery": 25.0
+  },
+  "data_misclass": 2
+ },
+ {
+  "label": "Deneme 1",
+  "floors": {
+   "vibration_rms_g": 0.005,
+   "temperature_c": 0.8,
+   "power_kw": 0.05,
+   "rpm": 3.0
+  },
+  "normal_per_h": 0.242,
+  "normal_alerts": 29,
+  "hours": 120.0,
+  "load": [
+   15,
+   180
+  ],
+  "missed": 2,
+  "spike": 1,
+  "delays": {
+   "vibration_ramp": 90.0,
+   "temperature_ramp": 182.5,
+   "power_vibration": 80.0,
+   "recovery": 25.0
+  },
+  "data_misclass": 3
+ },
+ {
+  "label": "Deneme 2",
+  "floors": {
+   "vibration_rms_g": 0.005,
+   "temperature_c": 0.8,
+   "power_kw": 0.3,
+   "rpm": 3.0
+  },
+  "normal_per_h": 0.108,
+  "normal_alerts": 13,
+  "hours": 120.0,
+  "load": [
+   5,
+   180
+  ],
+  "missed": 0,
+  "spike": 1,
+  "delays": {
+   "vibration_ramp": 90.0,
+   "temperature_ramp": 180.0,
+   "power_vibration": 80.0,
+   "recovery": 25.0
+  },
+  "data_misclass": 2
+ },
+ {
+  "label": "Deneme 3 (seçilen)",
+  "floors": {
+   "vibration_rms_g": 0.01,
+   "temperature_c": 1.0,
+   "power_kw": 0.3,
+   "rpm": 5
+  },
+  "normal_per_h": 0.075,
+  "normal_alerts": 9,
+  "hours": 120.0,
+  "load": [
+   5,
+   180
+  ],
+  "missed": 0,
+  "spike": 0,
+  "delays": {
+   "vibration_ramp": 110.0,
+   "temperature_ramp": 240.0,
+   "power_vibration": 95.0,
+   "recovery": 30.0
+  },
+  "data_misclass": 1
+ }
+]

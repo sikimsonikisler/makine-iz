@@ -1,0 +1,9 @@
+machine_id,timestamp,operating_mode,vibration_rms_g,temperature_c,power_kw,rpm,source
+ornek-kompresor,2026-09-30T06:00:05+03:00,loaded,0.1827,67.23,21.665,2939.7,csv
+ornek-kompresor,2026-02-30T10:00:00+03:00,loaded,0.172,67.89,22.345,2942.1,csv
+ornek-kompresor,2026-09-30T06:00:15+03:00,calisiyor,0.1817,67.1,22.242,2941.0,csv
+ornek-kompresor,2026-09-30T06:00:20+03:00,loaded,abc,67.1,21.771,2940.4,csv
+,2026-09-30T06:00:25+03:00,loaded,0.1878,66.94,21.943,2942.8,csv
+ornek-kompresor,2026-09-30T06:00:30+03:00,loaded,0.1864,66.48,-2.5,2943.4,csv
+ornek-kompresor,2026-09-30T06:00:35+03:00,loaded,0.1777,,22.264,2941.4,csv
+ornek-kompresor,2026-09-30T06:00:40+03:00,loaded,0.1586,66.72,22.631,2940.6,csv

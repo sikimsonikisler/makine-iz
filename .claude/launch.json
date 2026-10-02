@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "makine-iz",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["baslat.sh"],
+      "port": 8000
+    }
+  ]
+}
